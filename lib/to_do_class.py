@@ -4,5 +4,5 @@ class ToDoList():
 
     def my_list(self, task):
         self.tasks.append(task)
-        return task
+        return self.tasks
         

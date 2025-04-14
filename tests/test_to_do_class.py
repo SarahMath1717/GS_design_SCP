@@ -4,10 +4,16 @@ from lib.to_do_class import *
 def test_add_function():
     add = ToDoList()
     result = add.my_list("plan dinner")
-    assert result == "plan dinner"
+    assert result == ["plan dinner"]
     assert "plan dinner" in add.tasks
 
 # add 'to do' task to list with existing items
+def test_add_another():
+    add = ToDoList()
+    result = add.my_list("put on a load of washing")
+    assert result == ["put on a load of washing"]
+    result = add.my_list("get more eggs")
+    assert result == ["put on a load of washing", "get more eggs"]
 
 # hold an ongoing list of 'to do' tasks
 
