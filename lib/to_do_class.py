@@ -6,6 +6,9 @@ class ToDoList():
         self.tasks.append(task)
         return self.tasks
     
+    def just_return(self):
+        return self.tasks
+    
     def complete(self, completed):
         self.tasks.pop(completed)
         return self.tasks
