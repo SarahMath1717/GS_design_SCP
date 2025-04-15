@@ -18,6 +18,12 @@ def test_add_another():
 
 # mark task a complete and remove
 def test_complete():
-    completed = ToDoList("put on a load of washing", "get more eggs", "feed the snakes")
-    result = completed("get more eggs")
+    add = ToDoList()
+    result = add.my_list("put on a load of washing")
+    assert result == ["put on a load of washing"]
+    result = add.my_list("get more eggs")
+    assert result == ["put on a load of washing", "get more eggs"]
+    result = add.my_list("feed the snakes")
+    assert result == ["put on a load of washing", "get more eggs", "feed the snakes"]
+    result = add.complete(1)
     assert result == ["put on a load of washing", "feed the snakes"]
